@@ -1,1 +1,17 @@
+# 1. กำหนดโฟลเดอร์ให้เป็น Git Repository (หากยังไม่ได้ทำ)
+git init
 
+# 2. เพิ่มไฟล์เข้าระดับ Staging
+git add _final69_covid65.csv
+
+# 3. บันทึกการเปลี่ยนแปลง (Commit)
+git commit -m "Add COVID-19 dataset (_final69_covid65.csv)"
+
+# 4. เปลี่ยนชื่อ Branch หลักเป็น main
+git branch -M main
+
+# 5. เชื่อมต่อกับ Repository บน GitHub (แทนที่ URL ด้วยของ repository คุณ)
+git remote add origin https://github.com/USERNAME/REPOSITORY_NAME.git
+
+# 6. Push ข้อมูลขึ้น GitHub
+git push -u origin main
