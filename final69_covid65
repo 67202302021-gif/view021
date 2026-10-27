@@ -1,17 +1,11 @@
-# 1. กำหนดโฟลเดอร์ให้เป็น Git Repository (หากยังไม่ได้ทำ)
-git init
+[https://raw.githubusercontent.com/username/repository/main/_final69_covid65.csv](https://raw.githubusercontent.com/username/repository/main/_final69_covid65.csv)
+import pandas as pd
 
-# 2. เพิ่มไฟล์เข้าระดับ Staging
-git add _final69_covid65.csv
+# 1. วาง URL แบบ Raw ที่คัดลอกมาในเครื่องหมายคำพูด
+url = "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/_final69_covid65.csv"
 
-# 3. บันทึกการเปลี่ยนแปลง (Commit)
-git commit -m "Add COVID-19 dataset (_final69_covid65.csv)"
+# 2. อ่านไฟล์ผ่าน pandas (ใส่ low_memory=False เพื่อป้องกันเตือนเรื่องประเภทข้อมูล)
+df = pd.read_csv(url, low_memory=False)
 
-# 4. เปลี่ยนชื่อ Branch หลักเป็น main
-git branch -M main
-
-# 5. เชื่อมต่อกับ Repository บน GitHub (แทนที่ URL ด้วยของ repository คุณ)
-git remote add origin https://github.com/USERNAME/REPOSITORY_NAME.git
-
-# 6. Push ข้อมูลขึ้น GitHub
-git push -u origin main
+# 3. ตรวจสอบข้อมูล 5 แถวแรก
+print(df.head())
